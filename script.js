@@ -1,9 +1,19 @@
-// Simple animation on scroll
-window.addEventListener('scroll', () => {
-  document.querySelectorAll('section').forEach(section => {
-    const rect = section.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      section.classList.add('slide-in');
+// Reveal animations on scroll
+const sections = document.querySelectorAll('section');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in');
+      observer.unobserve(entry.target);
     }
   });
+}, {
+  threshold: 0.1
 });
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+
+console.log("Website animations loaded.");
