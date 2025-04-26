@@ -85,7 +85,6 @@ section.fade-in {
   color: #004080;
   text-decoration: none;
 }
-
 footer {
   background-color: #004080;
   color: white;
@@ -93,8 +92,6 @@ footer {
   padding: 15px 0;
   animation: fadeIn 2s ease-in;
 }
-
-/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
