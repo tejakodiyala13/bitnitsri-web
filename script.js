@@ -1,101 +1,19 @@
-body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
-  scroll-behavior: smooth;
-}
+// Reveal animations on scroll
+const sections = document.querySelectorAll('section');
 
-header {
-  background-color: #004080;
-  color: white;
-  padding: 20px;
-  position: relative;
-  text-align: center;
-  animation: fadeIn 2s ease-in-out;
-}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.1
+});
 
-header img.logo-left {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  height: 60px;
-}
+sections.forEach(section => {
+  observer.observe(section);
+});
 
-header img.logo-right {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  height: 60px;
-}
-
-nav {
-  background: #002c5a;
-  padding: 10px;
-  text-align: center;
-}
-
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #ffcc00;
-}
-
-section {
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: auto;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1s ease-out;
-}
-
-section.slide-in,
-section.fade-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.gallery img {
-  width: 100%;
-  max-width: 300px;
-  margin: 10px;
-  border-radius: 8px;
-  transform: scale(0.95);
-  transition: transform 0.3s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-.contact a {
-  color: #004080;
-  text-decoration: none;
-}
-
-footer {
-  background-color: #004080;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  animation: fadeIn 2s ease-in;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+console.log("Website animations loaded.");
