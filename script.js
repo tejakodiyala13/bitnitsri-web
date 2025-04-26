@@ -1,10 +1,12 @@
 // Toggle hamburger menu
 function toggleMenu() {
   const nav = document.getElementById("navLinks");
+  const hamburger = document.querySelector(".hamburger");
   nav.classList.toggle("show");
+  hamburger.classList.toggle("open");
 }
 
-// Scroll-based fade-in
+// Scroll-based fade-in animations
 const sections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver(entries => {
