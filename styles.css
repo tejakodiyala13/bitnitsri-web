@@ -6,6 +6,7 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Header */
 header {
   background-color: #004080;
   color: white;
@@ -15,22 +16,23 @@ header {
   animation: fadeIn 2s ease-in-out;
 }
 
-header .logo-left {
+header img.logo-left {
   position: absolute;
   top: 20px;
   left: 20px;
   height: 60px;
 }
 
-header .logo-right {
+header img.logo-right {
   position: absolute;
   top: 20px;
   right: 20px;
   height: 60px;
 }
 
+/* Navbar */
 nav {
-  background-color: #002c5a;
+  background: #002c5a;
   padding: 10px;
   text-align: center;
 }
@@ -40,13 +42,14 @@ nav a {
   margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 nav a:hover {
   color: #ffcc00;
 }
 
+/* Sections */
 section {
   padding: 40px 20px;
   max-width: 1000px;
@@ -56,12 +59,13 @@ section {
   transition: all 1s ease-out;
 }
 
-section.fade-in,
-section.slide-in {
+section.slide-in,
+section.fade-in {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* Gallery */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -81,11 +85,13 @@ section.slide-in {
   transform: scale(1.05);
 }
 
+/* Contact links */
 .contact a {
   color: #004080;
   text-decoration: none;
 }
 
+/* Footer */
 footer {
   background-color: #004080;
   color: white;
@@ -94,13 +100,8 @@ footer {
   animation: fadeIn 2s ease-in;
 }
 
+/* Animation keyframes */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
