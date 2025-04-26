@@ -15,14 +15,14 @@ header {
   animation: fadeIn 2s ease-in-out;
 }
 
-header img.logo-left {
+header .logo-left {
   position: absolute;
   top: 20px;
   left: 20px;
   height: 60px;
 }
 
-header img.logo-right {
+header .logo-right {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -30,7 +30,7 @@ header img.logo-right {
 }
 
 nav {
-  background: #002c5a;
+  background-color: #002c5a;
   padding: 10px;
   text-align: center;
 }
@@ -40,7 +40,7 @@ nav a {
   margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
@@ -56,8 +56,8 @@ section {
   transition: all 1s ease-out;
 }
 
-section.slide-in,
-section.fade-in {
+section.fade-in,
+section.slide-in {
   opacity: 1;
   transform: translateY(0);
 }
@@ -85,6 +85,7 @@ section.fade-in {
   color: #004080;
   text-decoration: none;
 }
+
 footer {
   background-color: #004080;
   color: white;
@@ -92,7 +93,14 @@ footer {
   padding: 15px 0;
   animation: fadeIn 2s ease-in;
 }
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
