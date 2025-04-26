@@ -9,7 +9,7 @@ body {
 header {
   background-color: #004080;
   color: white;
-  padding: 20px;
+  padding: 20px 10px;
   text-align: center;
 }
 
@@ -17,7 +17,6 @@ header .logos {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
 }
 
 .logo-left, .logo-right {
@@ -28,13 +27,19 @@ nav {
   background-color: #002c5a;
   padding: 10px;
   position: relative;
+  margin-top: 10px; /* Added spacing */
 }
 
 .hamburger {
   font-size: 24px;
   color: white;
-  display: none;
   cursor: pointer;
+  display: none;
+  padding: 10px;
+}
+
+.hamburger.open::before {
+  content: "✖"; /* Cross icon */
 }
 
 .nav-links {
@@ -103,20 +108,26 @@ footer {
 /* Mobile Styles */
 @media (max-width: 768px) {
   header .logos {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
   }
 
   .logo-left, .logo-right {
-    height: 40px;
+    height: 35px;
   }
 
-  header h1 {
-    font-size: 24px;
+  header h1, header p {
+    text-align: center;
+    margin-top: 10px;
   }
 
   .hamburger {
     display: block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
   }
 
   .nav-links {
