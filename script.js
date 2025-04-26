@@ -1,39 +1,23 @@
-// Reveal animations on scroll
-const sections = document.querySelectorAll('section');
+// Toggle hamburger menu
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.classList.toggle("show");
+}
+
+// Scroll-based fade-in
+const sections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('fade-in');
+      entry.target.classList.add("fade-in");
       observer.unobserve(entry.target);
     }
   });
-}, {
-  threshold: 0.1
-});
+}, { threshold: 0.1 });
 
 sections.forEach(section => {
   observer.observe(section);
 });
 
-// Hamburger menu toggle
-const hamburger = document.getElementById('hamburger');
-const navbar = document.getElementById('navbar');
-
-hamburger.addEventListener('click', () => {
-  navbar.classList.toggle('active');
-});
-
-// Scroll event gallery (advanced left scroll)
-const galleryContainer = document.querySelector('.scroll-container');
-
-let scrollValue = 0;
-galleryContainer.addEventListener('wheel', (e) => {
-  if (e.deltaY > 0) {
-    scrollValue += 300;
-  } else {
-    scrollValue -= 300;
-  }
-
-  galleryContainer.style.transform = `translateX(-${scrollValue}px)`;
-});
+console.log("Website loaded and animations applied.");
