@@ -9,42 +9,38 @@
 </head>
 <body>
   <header>
-    <img src="nitsrinagar_logo.png" alt="NIT Srinagar Logo" class="logo-left">
-    <img src="bis_logo.png" alt="BIS Logo" class="logo-right">
+    <div class="logos">
+      <img src="nitsrinagar_logo.png" alt="NIT Srinagar Logo" class="logo-left">
+      <img src="bis_logo.png" alt="BIS Logo" class="logo-right">
+    </div>
     <h1>BIS Club - NIT Srinagar</h1>
     <p>Promoting Quality and Standards</p>
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
   </header>
 
-  <nav id="navbar">
-    <a href="#about">About</a>
-    <a href="#events">Events</a>
-    <a href="#activities">Activities</a>
-    <a href="#team">Team</a>
-    <a href="#contact">Contact</a>
+  <nav>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#events">Events</a>
+      <a href="#activities">Activities</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
   <section id="about">
     <h2>About Us</h2>
-    <p>The BIS Club at NIT Srinagar is dedicated to spreading awareness about standards and quality. Inspired by the Bureau of Indian Standards, the club organizes events, workshops, and activities to promote standardization and innovation among students. The club is supported by NIT Srinagar and works in collaboration with BIS India.</p>
+    <p>The BIS Club at NIT Srinagar is dedicated to spreading awareness about standards and quality. Inspired by the Bureau of Indian Standards, the club organizes events, workshops, and activities to promote standardization and innovation among students.</p>
   </section>
 
   <section id="events">
-    <h2>ORIEN</h2>
+    <h2>Events</h2>
     <div class="gallery">
-      <div class="scroll-container">
-        <img src="event1.jpg" alt="RIBBON CUTTING">
-        <img src="event2.jpg" alt="CAKE CUTTING">
-        <img src="event3.jpg" alt="Event 3">
-        <img src="event4.jpg" alt="Event 4">
-        <img src="event5.jpg" alt="Event 5">
-        <img src="event6.jpg" alt="Event 6">
-        <img src="event7.jpg" alt="Event 7">
-      </div>
+      <img src="event1.jpg" alt="Event 1">
+      <img src="event2.jpg" alt="Event 2">
+      <img src="event3.jpg" alt="Event 3">
+      <img src="event4.jpg" alt="Event 4">
+      <img src="event5.jpg" alt="Event 5">
     </div>
   </section>
 
@@ -63,14 +59,14 @@
     <p>Meet the dedicated team of students and faculty who drive the vision of BIS Club at NIT Srinagar.</p>
   </section>
 
-  <section id="contact" class="contact">
+  <section id="contact">
     <h2>Contact Us</h2>
     <p><strong>Email:</strong> <a href="mailto:bis@nitsri.ac.in">bis@nitsri.ac.in</a></p>
-    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/bis_nitsri?igsh=ajFucjdvdXloZnN5" target="_blank">@bis_nitsri</a></p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/bis_nitsri" target="_blank">@bis_nitsri</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 BIS Club - NIT Srinagar | In collaboration with BIS India | Supported by NIT Srinagar</p>
+    <p>&copy; 2025 BIS Club - NIT Srinagar | In collaboration with BIS India</p>
   </footer>
 
   <script src="script.js"></script>
