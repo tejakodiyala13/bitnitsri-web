@@ -6,7 +6,7 @@ function toggleMenu() {
   hamburger.classList.toggle("open");
 }
 
-// Fade-in animation on scroll
+// Smooth fade-in animation on scroll
 const sections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver(entries => {
