@@ -1,19 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BIS Club | NIT Srinagar</title>
+  <meta name="title" content="BIS Club | NIT Srinagar - Promoting Quality and Standards">
+  <meta name="description" content="Official website of BIS Club at NIT Srinagar. Promoting quality consciousness, innovation, and standardization among students. Join our mission today!">
+  <meta name="keywords" content="BIS, BIS Club, NIT Srinagar, Bureau of Indian Standards, Quality, Standards, Events, Workshops">
+  <meta name="author" content="BIS Club - NIT Srinagar">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="BIS Club | NIT Srinagar - Promoting Quality and Standards">
+  <meta property="og:description" content="Official website of BIS Club at NIT Srinagar. Promoting quality consciousness, innovation, and standardization among students.">
+  <meta property="og:image" content="https://yourwebsite.com/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yourwebsite.com/">
+  <meta property="twitter:title" content="BIS Club | NIT Srinagar - Promoting Quality and Standards">
+  <meta property="twitter:description" content="Official website of BIS Club at NIT Srinagar. Promoting quality consciousness, innovation, and standardization among students.">
+  <meta property="twitter:image" content="https://yourwebsite.com/images/og-image.jpg">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- Preloader -->
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
+
+<!-- Scroll to Top Button -->
+<button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">↑</button>
+
+<!-- Notice Section -->
+<div class="notice-top">
+  <div class="notice-top-track">
+    <a href="notices/notice1.pdf" target="_blank">Expert talks Notice BIS</a> |
+    <a href="notices/notice2.pdf" target="_blank">National Level Online QUIZ</a> |
+    <a href="notices/notice3.pdf" target="_blank">National Standardization Ecosystem Online Quiz</a> |
+    <a href="notices/notice4.pdf" target="_blank">BIS Orientation</a>
+  </div>
+</div>
+
 <header>
   <div class="top-bar">
-    <img src="bis_logo.png" alt="NIT Srinagar Logo" class="logo left-logo">
-    <img src="nitsrinagar_logo.png" alt="BIS Logo" class="logo right-logo">
- </div>
+    <img src="logo1.png" alt="NIT Srinagar Logo" class="logo left-logo">
+    <img src="logo2.png" alt="BIS Logo" class="logo right-logo">
+  </div>
   <div class="header-text">
     <h1>BIS Club - NIT Srinagar</h1>
     <p>Promoting Quality and Standards</p>
@@ -32,7 +68,6 @@
 </nav>
 
 <main>
-
 <section id="about">
   <h2>About Us</h2>
   <p>The BIS Club at NIT Srinagar works to spread awareness about quality, standardization, and innovation through events, seminars, and workshops, nurturing future leaders of quality-driven industries.</p>
@@ -48,8 +83,8 @@
 <section id="events">
   <h2>Event Gallery</h2>
   <div class="gallery">
-    <!-- 21 images -->
-    <img src="images/event1.jpg" alt="Event 1">
+    <!-- Add your event images here -->
+   <img src="images/event1.jpg" alt="Event 1">
     <img src="images/event2.jpg" alt="Event 2">
     <img src="images/event3.jpg" alt="Event 3">
     <img src="images/event4.jpg" alt="Event 4">
@@ -75,17 +110,12 @@
 
 <section id="notices">
   <h2>Latest Notices</h2>
-  <div class="notice-marquee">
-    <div class="notice-track">
-      <a href="notices/notice1.pdf" target="_blank">Expert talks Notice BIS</a>
-      <span>•</span>
-      <a href="notices/notice2.pdf" target="_blank">National Level Online QUIZ</a>
-      <span>•</span>
-      <a href="notices/notice3.pdf" target="_blank">National Standardization Ecosystem Online Quiz</a>
-      <span>•</span>
-      <a href="notices/notice4.pdf" target="_blank">BIS Orientation</a>
-    </div>
-  </div>
+  <ul class="notice-list">
+    <li><a href="notices/notice1.pdf" target="_blank">Expert talks Notice BIS</a></li>
+    <li><a href="notices/notice2.pdf" target="_blank">National Level Online QUIZ</a></li>
+    <li><a href="notices/notice3.pdf" target="_blank">National Standardization Ecosystem Online Quiz</a></li>
+    <li><a href="notices/notice4.pdf" target="_blank">BIS Orientation</a></li>
+  </ul>
 </section>
 
 <section id="contact">
@@ -93,14 +123,17 @@
   <p><strong>Email:</strong> <a href="mailto:bis@nitsri.ac.in">bis@nitsri.ac.in</a></p>
   <p><strong>Instagram:</strong> <a href="https://www.instagram.com/bis_nitsri" target="_blank">@bis_nitsri</a></p>
 </section>
-
 </main>
+
+<!-- Lightbox for Event Images -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Enlarged Image">
+</div>
 
 <footer>
   <p>&copy; 2025 BIS Club - NIT Srinagar | In collaboration with BIS India</p>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
