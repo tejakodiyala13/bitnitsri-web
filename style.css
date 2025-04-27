@@ -186,3 +186,6 @@ footer {
     transform: translateY(0);
   }
 }
+.scroll-btn {
+  transition: opacity 0.3s, visibility 0.3s;
+}
