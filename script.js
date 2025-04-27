@@ -1,12 +1,14 @@
-// Toggle hamburger menu
+// your code goes here
+// Hamburger Toggle
 function toggleMenu() {
   const nav = document.getElementById("navLinks");
+  const hamburger = document.querySelector(".hamburger");
   nav.classList.toggle("show");
+  hamburger.classList.toggle("open");
 }
 
-// Smooth fade-in animation on scroll
+// Section Fade-in on Scroll
 const sections = document.querySelectorAll("section");
-
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -15,48 +17,55 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.1 });
+sections.forEach(section => observer.observe(section));
 
-sections.forEach(section => {
-  observer.observe(section);
+// Lightbox for Gallery
+const galleryImages = document.querySelectorAll(".gallery img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+galleryImages.forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = "flex";
+    lightboxImg.src = img.src;
+  });
+});
+function closeLightbox() {
+  lightbox.style.display = "none";
+}
+
+// Scroll to Top Button
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+window.onscroll = function() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+};
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Preloader
+window.addEventListener("load", function(){
+  const preloader = document.getElementById("preloader");
+  preloader.style.display = "none";
 });
 
-// Scroll gallery on arrow click + hide arrows at edges
-function scrollGallery(direction) {
-  const gallery = document.getElementById('gallery');
-  const scrollAmount = 320; // Adjust scroll size
-
-  if (direction === 'left') {
-    gallery.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  } else {
-    gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  }
-
-  setTimeout(updateScrollButtons, 500); // slight delay to check position after scroll
-}
-
-function updateScrollButtons() {
-  const gallery = document.getElementById('gallery');
-  const leftBtn = document.querySelector('.scroll-btn.left');
-  const rightBtn = document.querySelector('.scroll-btn.right');
-
-  // Hide left button if at start
-  if (gallery.scrollLeft <= 10) {
-    leftBtn.style.display = 'none';
-  } else {
-    leftBtn.style.display = 'block';
-  }
-
-  // Hide right button if at end
-  if (gallery.scrollWidth - gallery.clientWidth - gallery.scrollLeft <= 10) {
-    rightBtn.style.display = 'none';
-  } else {
-    rightBtn.style.display = 'block';
-  }
-}
-
-// Update button visibility when user scrolls manually too
-const galleryElement = document.getElementById('gallery');
-galleryElement.addEventListener('scroll', updateScrollButtons);
-
-// Initialize on page load
-window.addEventListener('load', updateScrollButtons);
+// Navbar Active Link
+const navLinks = document.querySelectorAll(".nav-links a");
+window.addEventListener('scroll', () => {
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (pageYOffset >= sectionTop - 100) {
+      current = section.getAttribute("id");
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
+});
